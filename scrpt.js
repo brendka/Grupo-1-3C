@@ -7,16 +7,16 @@ const textoResultado = document.querySelector('.texto- resultado');
 const lista = [item, item2]
 const perguntas = [
 {
-    enunciado: "insira o enunciadoda pergunta",
-    alternativa: ["alternativa1","alternativa2"]
+    enunciado: "Probabilidade de ganhar no tigrinho",
+    alternativa: ["10%","100%"]
 },
 {
-enunciado:"insira o enunciado da Pergunta2",
-alternativa: ["alternativa1","alternativa2"],
+enunciado:"Probabilidade de se viciar em cassino online",
+alternativa: ["100%","100%"],
 },
 {
-    enunciado:"insira o enunciado da pergunta3",
-    alternativa: ["alternativa1","alternativa2"]
+    enunciado:"Probabilidade de sair do vicio",
+    alternativa: ["0%","0%"]
 }
 ];
 let atual = 0;
