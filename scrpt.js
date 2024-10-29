@@ -22,9 +22,16 @@ let atual = 0;
 let perguntaAtual;
 function mostraPerguntas(){
     perguntaAtual = perguntas[atual];
-}
-const caixaPergunta = document.querySelector(".caixa-perguntas");
-function mostraPerguntas(){
-    perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
+    mostraPerguntas();
 }
+function mostraPerguntas() {
+    for (const alternativa of perguntaAtual.alternativa){
+        const botaoaAternativa = document.createElement("button")
+        botaoaAternativa.textContent = alternativa;
+        botaoaAternativa.append(botaoaAternativa);
+
+    }
+}
+
+mostraPerguntas();
