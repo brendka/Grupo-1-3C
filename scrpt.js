@@ -83,19 +83,109 @@ const perguntas = [
       ],
     },
   ];
+  function mostraAlternativas() {
+    for (const alternativa of perguntaAtual.alternativas) {
+      const botaoAlternativas = document.createElement("button");
+      botaoAlternativas.textContent = alternativa.texto;
+      botaoAlternativas.addEventListener("click", function () {
+        atual++;
+        mostraPergunta();
+      });
+      caixaAlternativas.appendChild(botaoAlternativas);
+    }
+  }
+  function respostaSelecionada(opcaoSelecionada){
+    atual++;
+    mostraPergunta();
+}
+mostraPergunta();
 let atual = 0;
 let perguntaAtual;
-function mostraPerguntas(){
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    mostraPerguntas();
-}
-function mostraPerguntas() {
-    for (const alternativa of perguntaAtual.alternativa){
-        const botaoaAternativa = document.createElement("button")
-        botaoaAternativa.textContent = alternativa;
-        botaoaAternativa.append(botaoaAternativa);
-    }
-}
+let historiaFinal = "";
 
-mostraPerguntas();
+function respostaSelecionada(opcaoSelecionada){
+  const afirmacoes = opcaoSelecionada.afirmacoes;
+  historiaFinal = afirmacoes;
+  atual++;
+  mostraPergunta();
+}
+mostraPergunta();
+
+elementoOpcoes.addEventListener("click", () => respostaSelecionada(opcao));
+
+function respostaSelecionada(opcaoSelecionada) {
+  atual++;
+ 
+  mostraPerguntaAtual();
+ }
+ function respostaSelecionada(opcaoSelecionada) {
+  const resposta = opcaoSelecionada.afirmacoes;
+  atual++;
+  mostraPerguntaAtual();
+  let atual = 0;
+let perguntaAtual;
+let historiaFinal = "";
+ }
+ function respostaSelecionada(opcaoSelecionada){
+  const afirmacoes = opcaoSelecionada.afirmacoes;
+  historiaFinal = afirmacoes;
+  atual++;
+  mostraPergunta();
+}
+function mostraPergunta() {
+  if (atual >= perguntas.length) {
+      mostraResultado();
+      return;
+  }
+  perguntaAtual = perguntas[atual];
+  caixaPerguntas.textContent = perguntaAtual.enunciado;
+   caixaAlternativas.textContent = "";
+  mostraAlternativas();
+}
+function mostraResultado() {
+  caixaPerguntas.textContent = "Em 2049...";
+  textoResultado.textContent = historiaFinal;
+  caixaAlternativas.textContent = "";
+}
+function respostaSelecionada(opcaoSelecionada) {
+  const afirmacoes = opcaoSelecionada.afirmacao;
+  historia += afirmacoes + "";
+  atual++;
+  mostraPergunta();
+}
+function mostraPergunta() {
+  if (atual >= perguntas.length) {
+    mostraResultado();
+    return;
+  }
+  perguntaAtual = perguntas[atual];
+  caixaPerguntas.textContent = perguntaAtual.enunciado;
+  caixaAlternativas.textContent = "";
+  mostraAlternativas();
+}
+function mostraResultado() {
+  caixaPerguntas.textContent = "Em 2049...";
+  textoResultado.textContent = historiaFinal;
+  caixaAlternativas.textContent = "";
+}
+function respostaSelecionada(opcaoSelecionada) {
+  const afirmacoes = opcaoSelecionada.afirmacao;
+  historia += afirmacoes + " ";
+  atual++;
+ mostraPergunta();
+}
+// código omitido
+
+enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que… alternativas: [
+  {
+      texto: "Isso é assustador!",
+      afirmacao: "No início ficou com medo do que essa tecnologia pode fazer.
+  {
+      texto: "Isso é maravilhoso!",
+      afirmacao: "Quis saber como usar IA no seu dia a dia."
+  }
+  ]
+  
+
+
+ 
