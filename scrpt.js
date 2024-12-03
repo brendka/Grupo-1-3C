@@ -29,10 +29,10 @@ const perguntas = [
         },
         {
           texto: "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-          afirmacao: "afirmação",
+          afirmacao: "afirmação"
         }
       ]
-    }
+    },
     {
       enunciado: "Após a elaboração do trabalho escrito, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
       alternativas: [
@@ -47,12 +47,10 @@ const perguntas = [
       ]
     },
     {
-      enunciado:
-        "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+      enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
       alternativas: [
         {
-          texto:
-            "Criar uma imagem utilizando uma plataforma de design como o Paint.",
+          texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
           afirmacao: "afirmação"
         },
         {
@@ -81,10 +79,10 @@ const perguntas = [
   let perguntaAtual;
   let historiaFinal = "";
 
-  function nostraPergunta() {
-    if (atuak >= perguntas.length) {
+  function mostraPergunta() {
+    if (atual >= perguntas.length) {
         mostraResultado();
-        return:
+        return;
     }
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
